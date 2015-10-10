@@ -29,7 +29,7 @@ File.readlines(ARGV[0]).each do |line|
 	end
 
 	if @build_done
-		if comp.include? "warning"
+		if comp.downcase.include? "warning"
 			unless @warnings.has_key? comp
 				@warnings[comp] = 1
 			else
@@ -52,7 +52,7 @@ File.readlines(ARGV[1]).each do |line|
 	end
 
 	if @build_done
-		if comp.include? "warning"
+		if comp.downcase.include? "warning"
 			unless @warnings.has_key? comp
 				@warnings[comp] = -1
 			else
